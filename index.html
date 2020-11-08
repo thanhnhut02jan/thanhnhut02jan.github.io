@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Style/style.css">
+    <link rel="stylesheet" href="./Style/svg.css">
+    <title>Gửi thầy cô</title>
+</head>
+
+<body>
+<!-- background music -->
+    <audio controls id="audio" autoplay loop style="position: absolute;" class="hidden"> 
+        <source src="./Assets/music/Rising Spirit Jay Man.mp3" type="audio/mpeg">
+    </audio>
+<!-- /background music -->
+
+<!-- start button -->
+    <div id="startBtn" class="startBtn">
+        <img src="./Assets/img/chamthan.svg" onclick="start()">
+    </div>
+<!-- /start button -->
+
+<!-- mailbox  -->
+    <svg class="mailbox" id="mail_box" viewBox="0 0 1920 1080">
+        <defs>
+            <clipPath id="clip-path">
+                <path id="front" class="cls-1"
+                    d="M883,309h2a90,90,0,0,1,90,90V565a0,0,0,0,1,0,0H793a0,0,0,0,1,0,0V399a90,90,0,0,1,90-90Z" />
+            </clipPath>
+        </defs>
+        <ellipse id="shadow" class="cls-2" cx="928" cy="844.5" rx="340" ry="9.5" />
+        <path id="grass2" class="cls-3"
+            d="M1112.39,842.73s3.87-31,24.87-50.86c0,0-29.75,18.38-34.09,25.51,0,0,1.83-32.41,22.27-50.88,0,0-38,21.46-48.06,56.67,0,0,7.56-47-24.76-67.1s-2.24,0-2.24,0,24.42,26.05,1.76,74.35c0,0,7.53-27.77-7.66-39.39s-1.5,0-1.5,0,7.32,25.61-9.22,51Z" />
+        <rect id="foot" class="cls-4" x="1004" y="422" width="60" height="421" />
+        <rect id="foot-2" class="cls-5" x="1034" y="422" width="30" height="421" />
+        <path id="grass1" class="cls-6"
+            d="M971.11,847s.35-32.66-17.11-53.83c0,0,26,19.66,29.22,27.22,0,0,2.5-34.18-14.61-53.83,0,0,33.5,23,38.49,60.18,0,0-1.07-49.6,32.44-70.47s2.13,0,2.13,0-26.73,27.22-11.4,78.33c0,0-3.57-29.33,12.47-41.43s1.43,0,1.43,0-10.34,26.91,2.14,53.83Z" />
+        <rect id="foot_shade" class="cls-7" x="1004" y="527" width="60" height="75" rx="3.19" />
+        <g id="big_one">
+            <path class="cls-8" d="M1157,303H875a90,90,0,0,0-90,90V573h462V393A90,90,0,0,0,1157,303Z" />
+        </g>
+        <g id="door">
+            <path id="front-2" class="cls-1"
+                d="M883,309h2a90,90,0,0,1,90,90V565a0,0,0,0,1,0,0H793a0,0,0,0,1,0,0V399a90,90,0,0,1,90-90Z" />
+            <g class="cls-9">
+                <g id="back">
+                    <path class="cls-10" d="M1024,565H842V399a90,90,0,0,1,90-90h2a90,90,0,0,1,90,90Z" />
+                </g>
+            </g>
+        </g>
+        <g id="mail">
+            <rect id="backmail" class="cls-11" x="926.93" y="436.18" width="155.07" height="101.82" rx="5" />
+            <polyline id="up" class="cls-8" points="926.93 521.96 1004.46 478.5 1082 521.96" />
+            <path id="bottom" class="cls-8"
+                d="M926.93,521H1082a0,0,0,0,1,0,0v12a5,5,0,0,1-5,5H931.93a5,5,0,0,1-5-5V521A0,0,0,0,1,926.93,521Z" />
+            <polyline id="shade_mail" class="cls-12"
+                points="926.87 452.27 1004.41 500.36 1081.95 452.27" />
+            <polyline id="down" class="cls-8" points="926.93 452.22 1004.46 495.68 1082 452.22" />
+            <path id="top" class="cls-8"
+                d="M931.93,436.18H1077a5,5,0,0,1,5,5v12a0,0,0,0,1,0,0H926.93a0,0,0,0,1,0,0v-12A5,5,0,0,1,931.93,436.18Z" />
+        </g>
+        <rect id="shade" class="cls-13" x="975.5" y="409.5" width="271.5" height="155.5" />
+        <path id="red_bar" class="cls-14"
+            d="M1009,433h118a0,0,0,0,1,0,0v21a0,0,0,0,1,0,0H1009a5,5,0,0,1-5-5V438A5,5,0,0,1,1009,433Z" />
+        <g id="mailbox_lid" >
+            <path class="cls-8" d="M975,566H793V399a90,90,0,0,1,90-90h2a90,90,0,0,1,90,90Z" />
+        </g>
+        <rect id="red_bar-2" class="cls-14" x="1073" y="451" width="54" height="24" />
+    </svg>
+<!-- /mail box  -->]
+
+<!-- mail contents -->
+    <div class="mail_content hidden scaleZero" id="mail_content">
+        <div class="floatImg hidden" style="right: 0;">
+            <img src="./Assets/img/pic4.svg">
+            <p>Thanks for always taking care of us and reassuring that all of us were doing okay; you are the worlds’ best teacher! Thank you for everything!</p>
+            <span onclick="closeImg()">Close</span>
+        </div>
+        <div class="floatImg hidden" style="left: 0;">
+            <img src="./Assets/img/pic2.svg">
+            <p>Thanks for being our safe zone, someone who tried to be our friend first and a teacher later! We all owe you so much! Happy teachers day!</p>
+            <span onclick="closeImg()">Close</span>
+        </div>
+        <div class="floatImg hidden" style="right: 0;">
+            <img src="./Assets/img/pic3.svg">
+            <p>Teaching is the best profession anyone can ever have. I feel really lucky to have you as my teacher. Happy teacher’s day! Wish you have a wonderful time today!</p>
+            <span onclick="closeImg()">Close</span>
+        </div>
+        <div class="floatImg hidden" style="left: 0;">
+            <img src="./Assets/img/pic1.svg">
+            <p>Dear teacher, you have been a great mentor and guide and have shaped my career well. I thank you for your effort and hope you remain a superb mentor for others also. Happy Teachers Day.</p>
+            <span onclick="closeImg()">Close</span>
+        </div>
+
+        <div class="mail2">
+            
+            <div id="mails_left_btn" class="mails-left">4</div>
+            <img src="./Assets/img/Mail2.svg">
+        
+        </div>
+    </div>
+
+    <div class="end hidden" id="end">
+        <img src="./Assets/img/end.svg" alt="">
+    </div>
+<!-- /mail contents -->
+
+<!-- footer  -->
+    <footer style="font-family: sans-serif; position: absolute; width: 50%; bottom: 10px; left: 80%; display: flex; transform: scale(0.8);">
+        <div style="text-align: right; line-height: 1.25; font-weight: bold; font-size: 18px; display: inline;">
+            <span id="icon-name" style="color: aliceblue;">Trương Thanh Nhựt<br  ></span>
+            <span style="color: aliceblue;">51900404</span>
+        </div>
+        <div>
+            <img style="width: 120px; height: auto;" src="https://iconclub.github.io/assets/iconLogo.png" alt="ICON">
+        </div>
+        
+    </footer>
+<!-- /footer  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+        integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+        crossorigin="anonymous"></script>
+    <script src="./Script/script.js" type="text/javascript"> </script>
+</body>
+
+</html>

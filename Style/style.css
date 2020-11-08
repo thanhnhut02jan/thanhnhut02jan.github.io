@@ -1,0 +1,219 @@
+* {
+    user-select: none;
+}
+
+body {
+    background-color: #111b1e; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+}
+
+.startBtn {
+    padding: 0px;
+    width: 2.5rem; 
+    position: absolute; 
+    top: 40%;
+    animation: standing 5s linear infinite;
+}
+
+@keyframes standing {
+    0% {
+        transform: translateY(-10px);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.startBtn:hover {
+    cursor: pointer;
+}
+
+.mailbox {
+    margin: auto;
+    margin-top: 15%;
+    width: 15rem;
+    height: 15rem;
+    transform: scaleY(0);
+}
+
+#mailbox_lid:hover {
+    cursor: pointer;
+}
+
+#mail {
+    transform-origin: center;
+    transition: 0.2s;
+}
+
+#mail:hover {
+    cursor: pointer;
+}
+
+.mail_content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.mail_content .mail2 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    top: 40%;
+    transform-origin: center;
+}
+
+
+.mail_content .mails-left {
+    position: fixed;
+    width: 0.2rem;
+    height: 0.2rem;
+    background-color: rgb(228 62 62);
+    border-radius: 50%;
+    top: 60%;
+    left: 40%;
+    font-size: 2px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    color: aliceblue;
+    animation: pulse 1.5s linear infinite;
+}
+
+.mail_content .mails-left:hover {
+    cursor: pointer;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(228, 62, 62, 0.7);
+    }
+    40% {
+        box-shadow: 0 0 0 0.2rem rgba(228, 62, 62, 0);
+    }
+    80% {
+        box-shadow: 0 0 0 0.2rem rgba(228, 62, 62, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(228, 62, 62, 0);
+    }
+}
+
+.mail_content .floatImg {
+    position: absolute;
+    height: 90%;
+    width: 30rem;
+    margin: 2rem 2rem;
+    background-color: aliceblue;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px white;
+}
+
+.mail_content .floatImg span {
+    position: absolute;
+    width: 90px;
+    height: 25px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: aliceblue;
+    left: 40%;
+    background-color: rgb(223, 120, 120);
+}
+
+.mail_content .floatImg span:hover {
+    cursor: pointer;
+    background-color: rgb(224, 87, 87);
+}
+
+.mail_content .floatImg img {   
+    width: 30rem;
+    height: 30rem;
+    user-select: none;
+    box-shadow: 0px 10px 5px #999;
+}
+
+.mail_content .floatImg p {
+    padding: 1rem;
+    height: 6rem;
+    color: #555;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.end {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.scaleZero .mail2{
+    transform: scale(0);
+}
+
+@keyframes fadeOut {
+    0% {
+        transform: rotate(0deg) translateY(0px);
+        opacity: 1; 
+        filter: blur(1px);
+    }
+
+    100% { 
+        opacity: 0;
+        transform: rotate(3deg) translateY(-200px);
+        filter: blur(20px);
+    }
+}
+
+.fadeOut {
+    animation: fadeOut 1s linear forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes openLid {
+    0% {}
+
+    80% {
+        transform: rotate3d(1, 0, 0, 85deg) skewX(30deg);
+    }
+
+    90% {
+        transform: rotate3d(1, 0, 0, 75deg) skewX(30deg);
+    }
+
+    100% {
+        transform: rotate3d(1, 0, 0, 85deg) skewX(30deg);
+    }
+}
+
+.openLid {
+    transform-origin: 187px 565px   ;
+    animation: openLid 0.5s ease-in forwards;
+    animation-delay: 0.3s;
+}
