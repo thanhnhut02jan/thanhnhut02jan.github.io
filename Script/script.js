@@ -65,7 +65,16 @@ var fadeInContentsImg = () => {
         if (n > 4) {
             n = 1
         }
-        document.getElementById('mails_left_btn').innerHTML = 4 - n;
+
+        setTimeout(() => {
+            document.querySelector('.mail_content .mails-left span').textContent = 4 - n;
+        }, 500);
+
+        var a = document.querySelector('.mail_content .mails-left span');
+        a.classList.add('blurOut');
+        setTimeout(() => {
+            a.classList.remove('blurOut');
+        }, 1000);
 
         var img = document.querySelector(`.mail_content div:nth-child(${n})`);
         img.classList.remove("fadeOut");
@@ -85,7 +94,7 @@ function closeImg(){
     }, 1000)
     isShowing = false;
     if ((4 - n) == 0) {
-        document.getElementById('mails_left_btn').innerHTML = 4;
+        document.querySelector('.mail_content .mails-left span').textContent = 4;
     }
     isTyping = false;
 }
@@ -93,16 +102,16 @@ function closeImg(){
 var isTyping = false;
 function typingAnimation(ele) {
     isTyping = true;
-    text = ele.textContent;
+    text = ele.innerHTML;
     textLength = text.length;
     function typing (currentText, currentLength) {
-        if (currentLength < textLength && isTyping == true) {
-            currentText = text.slice(0, ++currentLength);
-            ele.textContent = currentText;
-            console.log(currentText);
-            setTimeout(typing, 50, currentText, currentLength);
+        if (currentLength <= textLength && isTyping == true) {
+            currentText = text.slice(0, currentLength);
+            letter = text.slice(currentLength, ++currentLength);
+            ele.innerHTML = currentText + letter;
+            setTimeout(typing, 100, currentText, currentLength);
         } else if (isTyping == false){
-            ele.textContent = text;   
+            ele.innerHTML = text;   
         }
     };
 

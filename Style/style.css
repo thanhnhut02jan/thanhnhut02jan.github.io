@@ -2,6 +2,10 @@
     user-select: none;
 }
 
+html {
+    font-size: 16px;
+}
+
 body {
     background-color: #111b1e; 
     overflow: hidden;
@@ -58,11 +62,12 @@ body {
 }
 
 .mail_content {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     position: absolute;
     display: flex;
     justify-content: center;
+
 }
 
 .mail_content .mail2 {
@@ -75,7 +80,7 @@ body {
 
 
 .mail_content .mails-left {
-    position: fixed;
+    position: absolute;
     width: 0.2rem;
     height: 0.2rem;
     background-color: rgb(228 62 62);
@@ -92,6 +97,28 @@ body {
 
 .mail_content .mails-left:hover {
     cursor: pointer;
+    background-color: rgb(208 42 42);
+}
+
+.blurOut {
+    animation: blurOut 1s linear;
+}
+
+@keyframes blurOut {
+    0% {
+        filter: blur(0px);
+        transform: scale(1);
+    }
+
+    50% {
+        filter: blur(1px);
+        transform: scale(1.1);
+    }
+
+    100% {
+        filter: blur(0px);
+        transform: scale(1);
+    }
 }
 
 @keyframes pulse {
@@ -112,7 +139,7 @@ body {
 .mail_content .floatImg {
     position: absolute;
     height: 90%;
-    width: 30rem;
+    width: 30%;
     margin: 2rem 2rem;
     background-color: aliceblue;
     border-radius: 1rem;
@@ -128,6 +155,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: aliceblue;
     left: 40%;
+    bottom: -10px;
     background-color: rgb(223, 120, 120);
 }
 
@@ -137,8 +165,8 @@ body {
 }
 
 .mail_content .floatImg img {   
-    width: 30rem;
-    height: 30rem;
+    width: 100%;
+    height: 70%;
     user-select: none;
     box-shadow: 0px 10px 5px #999;
 }
@@ -147,13 +175,30 @@ body {
     padding: 1rem;
     height: 6rem;
     color: #555;
+    font-size: 2.5vh;
+    font-weight: 600;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.end {
-    position: absolute;
-    width: 80%;
-    height: 80%;
+.mail_content .floatImg p::after {
+    content: "|";
+    width: 1px;
+    font-weight: 600;
+    animation: blink 0.2s ease infinite;
+}
+
+
+
+@keyframes blink{
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .hidden {
