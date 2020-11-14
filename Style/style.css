@@ -72,32 +72,45 @@ body {
 
 .mail_content .mail2 {
     position: absolute;
-    width: 1rem;
-    height: 1rem;
-    top: 40%;
+    width: calc((30vw + 30vh) / 2);
+    height: calc((30vw + 30vh) / 2);
+    top: 15%;
     transform-origin: center;
 }
 
 
 .mail_content .mails-left {
-    position: absolute;
-    width: 0.2rem;
-    height: 0.2rem;
+    position: relative;
+    color: white;
+    transition: 0.5s;
+    font-size: calc((4vw + 4vh) / 2);
     background-color: rgb(228 62 62);
+    width: 20%;
+    height: 20%;
     border-radius: 50%;
-    top: 60%;
-    left: 40%;
-    font-size: 2px;
     text-align: center;
+    top: 80%;
+    left: 40%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 600;
-    color: aliceblue;
-    animation: pulse 1.5s linear infinite;
+    animation: pulse 1.5s ease-in infinite;
+}
+
+.zoomIn {
+    animation: zoomIn 1s cubic-bezier(0.25, 0.37, 0, 1.84) forwards;
+}
+
+@keyframes zoomIn{
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .mail_content .mails-left:hover {
     cursor: pointer;
-    background-color: rgb(208 42 42);
 }
 
 .blurOut {
@@ -111,7 +124,7 @@ body {
     }
 
     50% {
-        filter: blur(1px);
+        filter: blur(20px);
         transform: scale(1.1);
     }
 
@@ -126,10 +139,10 @@ body {
         box-shadow: 0 0 0 0 rgba(228, 62, 62, 0.7);
     }
     40% {
-        box-shadow: 0 0 0 0.2rem rgba(228, 62, 62, 0);
+        box-shadow: 0 0 0 5rem rgba(228, 62, 62, 0);
     }
     80% {
-        box-shadow: 0 0 0 0.2rem rgba(228, 62, 62, 0);
+        box-shadow: 0 0 0 5rem rgba(228, 62, 62, 0);
     }
     100% {
         box-shadow: 0 0 0 0 rgba(228, 62, 62, 0);
@@ -175,8 +188,9 @@ body {
     padding: 1rem;
     height: 6rem;
     color: #555;
-    font-size: 2.5vh;
+    font-size: calc((1.5vw + 1.5vh) / 2);
     font-weight: 600;
+    line-height: calc((2.5vw + 2.5vh) / 2);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -186,8 +200,6 @@ body {
     font-weight: 600;
     animation: blink 0.2s ease infinite;
 }
-
-
 
 @keyframes blink{
     0% {
@@ -203,10 +215,6 @@ body {
 
 .hidden {
     visibility: hidden;
-}
-
-.scaleZero .mail2{
-    transform: scale(0);
 }
 
 @keyframes fadeOut {

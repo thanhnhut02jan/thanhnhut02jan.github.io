@@ -32,11 +32,9 @@ function start() {
             mailContent = document.getElementsByClassName('mail_content')[0];
             mailContent.classList.remove("hidden");
 
-            anime({
-                targets: '.mail_content .mail2',
-                scale: 25,
-                duration: 2000
-            });
+            var mail2 = document.querySelector('.mail_content .mail2');
+            mail2.classList.remove('zoomIn');
+            mail2.classList.add('zoomIn');
 
             anime({
                 targets: '#mail_box',
@@ -109,7 +107,7 @@ function typingAnimation(ele) {
             currentText = text.slice(0, currentLength);
             letter = text.slice(currentLength, ++currentLength);
             ele.innerHTML = currentText + letter;
-            setTimeout(typing, 100, currentText, currentLength);
+            setTimeout(typing, 80, currentText, currentLength);
         } else if (isTyping == false){
             ele.innerHTML = text;   
         }
