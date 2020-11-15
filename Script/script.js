@@ -1,5 +1,10 @@
-const audio = document.getElementById('audio');
-audio.volume = 0;
+
+
+function thisVolume(volume_value) { 
+    var myAudio = document.getElementById("audio"); 
+    document.getElementById("vol-control").innerHTML=volume_value; 
+    myAudio.volume = volume_value / 100; 
+    }
 
 function start() {
 

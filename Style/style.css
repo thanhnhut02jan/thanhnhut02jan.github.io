@@ -270,3 +270,16 @@ body {
     animation: openLid 0.5s ease-in forwards;
     animation-delay: 0.3s;
 }
+
+#vol-control {
+    position: absolute;
+    transform: rotateZ(180deg);
+    bottom: 12%;
+    right: 6%;
+    opacity: 0.05;
+    transition: 1s;
+}
+
+#vol-control:hover{
+    opacity: 1;
+}
